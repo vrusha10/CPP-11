@@ -1,0 +1,53 @@
+Override:- Override keyword said to complier we can check the particular method is override.
+
+/*Declare override in 2nd class */
+#include <iostream>
+using namespace std;
+class A
+{
+    public:
+    virtual void fun(int a) 
+    {
+        cout<<"Fun A"<<a<<endl;
+    }
+};
+class B:public A
+{
+    void fun(int a) override
+    {
+        cout<<"Fun B"<<a<<endl;
+    }
+};
+int main()
+{
+   A *c=new B;
+   c->fun(10);
+}
+
+o/p=Fun B 10
+
+/*Declare Both class Virtual and Using override Keyword */
+#include <iostream>
+using namespace std;
+class A
+{
+    public:
+    virtual void fun(int a) 
+    {
+        cout<<"Fun A"<<a<<endl;
+    }
+};
+class B:public A
+{
+    virtual void fun(int a) override
+    {
+        cout<<"Fun B"<<a<<endl;
+    }
+};
+int main()
+{
+   A *c=new B;
+   c->fun(10);
+}
+
+o/p=Fun B 10
