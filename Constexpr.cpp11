@@ -1,0 +1,23 @@
+Constexpr :- If we want return 1 function so that time used in constexpr in cpp11.
+             If We want 1 or more function is return so that time used in Constexpr in cpp14.
+
+#include <iostream>
+using namespace std;
+class Base 
+{
+    int len,bre;
+public:
+    constexpr Base(int l,int b):len(l),bre(b){}
+	constexpr int fun()
+	{
+		return len*bre;
+	}
+};
+int main()
+{
+	constexpr Base obj(2,3);
+	cout<<obj.fun()<<endl;
+	return 0;
+}
+
+o/p=6;
