@@ -1,0 +1,17 @@
+Delete :- If we do not want the constructor which allow double parameter,so we can used constructor with euqal to delete keyword and disable this function,
+
+#include <iostream>
+using namespace std;
+class A
+{
+    public:
+    A(int a){};
+    A(double x)=delete;
+    A &operator =(const A&)=delete;
+};
+int main()
+{
+   A a1(10);
+}
+
+o/p= 10
