@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+class A
+{
+  int *ptr;
+   public:
+  A()
+  {
+    cout << "Calling Default constructor"<<endl;      // Default constructor
+    ptr = new int ;
+  }
+
+  A(const A &obj)
+  {                                                   // Copy Constructor
+    this->ptr = new int;                              // copy of object is created
+    cout << " Copy constructor"<<endl;                // Deep copying
+  }
+
+  A(A &&obj1)
+  {
+     cout << "Move constructor"<<endl;                // Move constructor
+    this->ptr = obj1.ptr;                             // It will simply shift the resources,
+    obj1.ptr = NULL;                                  // without creating a copy.
+  }
+
+  ~A()
+  {
+    cout << " Destructor"<<endl;                      // Destructor
+    delete ptr;
+  }
+};
+
+int main() 
+{
+  vector <A> v;
+  v.push_back(A());
+}
+
+ 
